@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Political Sentiment Analysis</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+      h1 {
+        margin-left: 20px;
+      }
+      nav {
+        background-color: #032539;
+        overflow: hidden;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0; /* Set margin to zero to remove extra margin */
+        padding: 0;
+      }
+
+      img {
+        margin-top: 20px; /* Adjust the margin-top value as per your preference */
+        display: block; /* Center align the image */
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      li {
+        margin-bottom: 20px;
+        margin-left: 20px;
+      }
+      .button-container {
+        text-align: center;
+        margin-bottom: 20px;
+        margin-top: 20px;
+      }
+      .button {
+        padding: 10px 20px;
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <h1 style="color: white; text-align: center">
+        Political Sentiment Analysis
+      </h1>
+    </nav>
+
+    <img
+      src="https://i.ytimg.com/vi/NOnTOg3YJZw/maxresdefault.jpg"
+      width="1000px"
+      height="400px"
+      alt="Political Sentiment"
+    />
+
+    <div class="button-container">
+      <a href="/sentiment" class="button">Sentiment Analysis</a>
+      <a href="/visualization" class="button">Visualization</a>
+    </div>
+
+    <div class="button-container">
+      <!-- First button -->
+      <button class="button">Button 1</button>
+      <!-- Second button -->
+      <button class="button">Button 2</button>
+    </div>
+    <h1>Latest News</h1>
+    <ul>
+      {% for article in all_articles %}
+      <li>
+        <strong>{{ article.title }}</strong>
+        <p>{{ article.description }}</p>
+        <a href="{{ article.url }}" target="_blank">Read more</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>

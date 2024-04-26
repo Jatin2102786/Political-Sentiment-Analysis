@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sentiment Analysis</title>
+    <style>
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin-left: 20px;
+      }
+      li {
+        margin-bottom: 20px;
+        margin-left: 20px;
+      }
+      h2 {
+        margin-left: 20px;
+      }
+      h3 {
+        margin-left: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Top 5 Most Positive Reviews</h2>
+    <h3>Donald Trump</h3>
+    <ul>
+      {% for review in trump_reviews_positive %}
+      <li>{{ review }}</li>
+      {% endfor %}
+    </ul>
+    <h3>Joe Biden</h3>
+    <ul>
+      {% for review in biden_reviews_positive %}
+      <li>{{ review }}</li>
+      {% endfor %}
+    </ul>
+    <h2>Top 5 Most Negative Reviews</h2>
+    <h3>Donald Trump</h3>
+    <ul>
+      {% for review in trump_reviews %}
+      <li>{{ review }}</li>
+      {% endfor %}
+    </ul>
+    <h3>Joe Biden</h3>
+    <ul>
+      {% for review in biden_reviews %}
+      <li>{{ review }}</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
