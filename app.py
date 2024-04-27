@@ -133,12 +133,16 @@ def get_news(topic):
 @app.route('/')
 def index():
     
+    
+    top5_trump_negative_reviews = top5_trump_negative['text']
+    top5_biden_negative_reviews = top5_biden_negative['text']
+    
     biden_articles = get_news('Joe Biden')
     trump_articles = get_news('Donald Trump')
     
     all_articles = biden_articles + trump_articles
     
-    return render_template('index.html', all_articles=all_articles)
+    return render_template('index.html', all_articles=all_articles,plot_div=fig.to_html(full_html=False),trump_reviews=top5_trump_negative_reviews, biden_reviews=top5_biden_negative_reviews)
 
 
 @app.route('/sentiment')

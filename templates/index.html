@@ -9,6 +9,12 @@
       h1 {
         margin-left: 20px;
       }
+      h2 {
+        margin-left: 20px;
+      }
+      h3 {
+        margin-left: 20px;
+      }
       nav {
         background-color: #032539;
         overflow: hidden;
@@ -60,17 +66,27 @@
       alt="Political Sentiment"
     />
 
-    <div class="button-container">
-      <a href="/sentiment" class="button">Sentiment Analysis</a>
-      <a href="/visualization" class="button">Visualization</a>
-    </div>
+    <h2>Visualization</h2>
+    <div id="plot"></div>
 
-    <div class="button-container">
-      <!-- First button -->
-      <button class="button">Button 1</button>
-      <!-- Second button -->
-      <button class="button">Button 2</button>
-    </div>
+    <script>
+      var plot_div = "{{ plot_div|safe }}";
+    </script>
+
+    <h2>Top 5 Most Negative Reviews</h2>
+    <h3>Donald Trump</h3>
+    <ul>
+      {% for review in trump_reviews %}
+      <li>{{ review }}</li>
+      {% endfor %}
+    </ul>
+    <h3>Joe Biden</h3>
+    <ul>
+      {% for review in biden_reviews %}
+      <li>{{ review }}</li>
+      {% endfor %}
+    </ul>
+
     <h1>Latest News</h1>
     <ul>
       {% for article in all_articles %}
